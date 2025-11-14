@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIRTHDAY LORE CHALLENGE!</title>
+    <style>
+        body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        color: #333;
+        
+        /* --- BACKGROUND IMAGE CODE START --- */
+        background-color: #ffffff; /* Pure white background */
+        /* Use two background images, separated by a comma */
+        background-image: url('background2.png'), url('background1.jpg'); /* <<< MODIFIED HERE */
+        /* Position the first image on the left, second on the right */
+        background-position: left center, right center; /* <<< MODIFIED HERE */
+        background-repeat: no-repeat; /* Ensure images don't repeat */
+        background-attachment: fixed; /* Keep images fixed when scrolling */
+        /* Set sizes for both images. You can adjust these. */
+        background-size: auto 100vh, auto 100vh; /* <<< MODIFIED HERE (adjust as needed) */
+        
+        color: #333;              
+        /* --- BACKGROUND IMAGE CODE END --- */
+    }
+        h1 {
+            color: #fc8e34;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        p {
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            padding: 5px 10px;
+            display: inline-block;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .challenge-container {
+            background-color: #fab804; /* Misty Rose */
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        .question-input {
+            padding: 12px 15px;
+            font-size: 1.1em;
+            border: 2px solid #fab804; /* Light pink border */
+            border-radius: 8px;
+            width: 70%;
+            margin-right: 10px;
+        }
+        .submit-button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            background-color: #87ceeb; /* Sky Blue */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #6495ed; /* Cornflower Blue */
+        }
+        #feedbackMessage {
+            color: #ff4500; /* OrangeRed for feedback */
+            margin-top: 15px;
+            font-weight: bold;
+            display: none; /* Initially hidden */
+        }
+        .surprise-content {
+            margin-top: 30px;
+            padding: 25px;
+            border: 3px double #8b6600; /* Double border for the surprise */
+            border-radius: 15px;
+            background-color: #fab804; /* Floral White */
+            display: none; /* THIS IS KEY: It starts hidden! */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: bounceIn 1s forwards; /* A bouncier animation */
+        }
+        .surprise-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Keyframe animations */
+        @keyframes bounceIn {
+            0% { transform: scale(0.1); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="mainTitle">URBAN LEGENDS EXAMINATION!</h1>
+    <p id="mainInstruction"></p>
+
+    <div id="questionBox" class="challenge-container">
+        <p id="questionText"><strong>Sino yung nahulog sa kanal nung ERDA JS naten ?</strong></p>
+        <input type="text" id="answerInput" class="question-input" placeholder="Type your answer here...">
+        <button class="submit-button" onclick="checkAnswer()">Unlock Surprise!</button>
+        <p id="feedbackMessage"></p>
+    </div>
+
+    <div id="stageOneSurprise" class="surprise-content">
+        <h2>🎉 You Got It! Happy Birthday, MakiBao! 🎉</h2>
+        <p>Kung may star of the night ang JS meron din Kanal of the night at si Ulo yon</p>
+        <img src="lander1.jpg" alt="Friends celebrating GIF">
+        <p>Mga memories kasama mo ang Ulo ng Dixxx.</p>
+        <img src="8.jpg" alt="epic photo 8">
+        <img src="lander2.jpg" alt="lander pic 2">
+        <img src="lander3.jpg" alt="lander pic 3">
+        <img src="lander4.jpg" alt="lander pic 4">
+        <img src="lander5.jpg" alt="lander pic 5">
+        <img src="lander6.jpg" alt="lander photo 6"> 
+        <p>Ready for the next Dixxx Lore Question!</p>
+        <button class="submit-button" onclick="nextQuestionStage2()">Proceed to Question 2</button>
+    </div>
+
+    <div id="stageTwoSurprise" class="surprise-content">
+        <h2> Stage 2 Dixxx Lore Answered!</h2>
+        <p>Galing mo Ilong! Kuhang kuha mo inis ko!</p>
+        <img src="ivansolid2.jpg" alt="ivan photo1"> 
+        <p>Memories kasama ang Otnis ng Dixxx</p>
+        <img src="ivan2.jpg" alt="ivan photo2"> 
+        <img src="ivan3.jpg" alt="ivan photo3">
+        <img src="grounded1.png" alt="ivan photo34"> 
+        <img src="ivan4.jpg" alt="ivan photo4">
+        <img src="ivan5.jpg" alt="ivan photo5">   
+        <p> Norem pa yan wag kang ano!</p>
+        <button class="submit-button" onclick="nextQuestionStage3()">Next Lore Question</button>
+    </div>
+
+    <div id="stageThreeSurprise" class="surprise-content">
+        <h2> Stage 3 Dixxx Lore Answered !</h2>
+        <p> Malupet kang tonap ka ! si Boratilyo nga Karyoka King !</p>
+        <img src="emman1.jpg" alt="emman Photo 1"> <p> Mga Alaala ng Madilim na nakaraan kasama si Emman !</p>
+        <img src="emman2.jpg" alt="emman photo2">
+        <img src="emman3.jpg" alt="emman photo3"> 
+        <img src="emman4.jpg" alt="emman photo4"> 
+        <img src="emman5.jpg" alt="emman photo5">
+        <img src="emman6.jpg" alt="emman photo6">
+        <img src="emman7.jpg" alt="emman photo7">   
+        <button class="submit-button" onclick="nextQuestionStage4()">Last Dixxx Lore Question!</button>
+    </div>
+
+    <div id="surpriseBox" class="surprise-content">
+        <h2> URBAN LEGENDS EXAMINATION COMPLETE! HAPPY BIRTHDAY , MAKIBAO !</h2>
+        <p> MGA PIC NA LEGENDS LNG NAKAKAALAM !</p>
+        <img src="solid1.jpg" alt="Solid photo1">
+        <img src="solid2.jpg" alt="Solid photo2">
+        <img src="solid3.jpg" alt="Solid photo3">
+        <img src="solid4.jpg" alt="Solid photo4">
+        <img src="solid5.jpg" alt="Solid photo5">
+        <img src="solid 17.jpg" alt="Solid photo17">
+        <img src="solid6.jpg" alt="Solid photo6">
+        <img src="solid7.jpg" alt="Solid photo7">
+        <img src="solid8.jpg" alt="Solid photo8">
+        <img src="solid 16.jpg" alt="Solid photo16">
+        <img src="solid9.jpg" alt="Solid photo9">
+        <img src="solid10.jpg" alt="Solid photo10">
+        <img src="solid11.jpg" alt="Solid photo11">
+        <img src="solid12.jpg" alt="Solid photo12">
+        <img src="solid13.jpg" alt="Solid photo13">
+        <img src="solid14.jpg" alt="Solid photo14">
+        <img src="solid15.jpg" alt="Solid photo15">
+         <p> Happy Ilong day Ule Uwe kana dito di na kami galit !</p>
+    </div>
+
+
+    <script>
+        var currentStage = 1;
+
+        const API_ENDPOINT = '';
+
+        async function checkAnswer() {
+            var input = document.getElementById("answerInput").value.trim().toLowerCase();
+            var feedbackMessage = document.getElementById("feedbackMessage");
+            
+            feedbackMessage.textContent = "Checking lore... Please wait, hunghang..!";
+            feedbackMessage.style.display = "block";
+
+            try {
+                const response = await fetch (API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        stage: currentStage,
+                        answer: input
+                    })
+                });
+
+                const data = await response.json();
+                var isCorrect = data.correct;
+
+                if (isCorrect) {
+                    feedbackMessage.style.display = "none";
+                    document.getElementById("answerInput").value = '';
+
+                    document.getElementById('questionBox').style.display = 'none';
+
+                    if (currentStage ===1) {
+                        document.getElementById('stageOneSurprise').style.display = 'block';
+                    } else if (currentStage ===2) {
+                        document.getElementById('stageTwoSurprise').style.display = 'block';                       
+                    } else if (currentStage ===3) {
+                        document.getElementById('stageThreeSurprise').style.display = 'block';
+                    } else if (currentStage ===4) {
+                        document.getElementById('surpriseBox').style.display = 'block';
+                        document.getElementById('mainTitle').textContent = 'LORE COMPLETE ! DIXXX OG!';
+                        document.getElementById('mainInstruction').style.display = 'none';
+                    }
+                } else {
+                    feedbackMessage.textContent = "BOBO MALI, ULET KA HUNGHANG !";
+                    feedbackMessage.style.display = "block";
+                }
+            } catch (error) {
+                console.error("API check failed:", error);
+                feedbackMessage.textContent = "Error checking answer. Try again.";
+            }
+        }
+        
+        function updateQuestionBox(stage, questionText, placeholder) {
+            currentStage = stage;
+            document.getElementById('mainTitle').textContent = 'Stage' + stage + ' Dixxx Lore Question Continues!';
+            document.getElementById('mainInstruction').textContent = 'One Step Closer to the Last Question !';
+            document.getElementById('questionText').innerHTML = questionText;
+            document.getElementById('answerInput').placeholder = placeholder;
+            document.getElementById('questionBox').style.display = 'block';
+        }
+        function nextQuestionStage2() {
+            document.getElementById('stageOneSurprise').style.display = 'none';
+            // REPLACE TEXT FOR QUESTION 2 HERE ***
+            updateQuestionBox(2, "Sino ang Umuwi sa inuman kase topic ay politika ?", "I am Sped");
+            document.querySelector('.submit-button').textContent = 'Unlock Stage 2 Prize!';
+        }
+
+        function nextQuestionStage3() {
+            document.getElementById('stageTwoSurprise').style.display = 'none';
+            //REPLACE TEXT FOR QUESTION 3HERE ***
+            updateQuestionBox(3, "Kanino nagsimula ang Alamat ng Karyoka ?", "Yes Man");
+            document.querySelector('.submit-button').textContent = 'Unlock Stage 3 prize!';
+        }
+
+        function nextQuestionStage4() {
+            document.getElementById('stageThreeSurprise').style.display = 'none';
+            //REPLACE TEXT FOR QUESTION 4 HERE ***
+            updateQuestionBox(4, "Ano ang tunay na meaning ng Dixxx?", "clue: mukha kang ganon!");
+            document.querySelector('.submit-button').textContent = 'Unlock grand Prize!';
+        }
+    </script>
+
+</body>
+</html>
